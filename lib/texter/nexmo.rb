@@ -78,7 +78,7 @@ class Texter::NexmoClient < Texter::Client
                             "client-ref" => message.reference),
         {"Content-Type" => "application/x-www-form-urlencoded"})
 
-    return NexmoResponse.new(response.body)
+    return Texter::NexmoResponse.new(response.body)
   end
 
   # @private
