@@ -60,7 +60,7 @@ class Texter::NexmoClient < Texter::Client
   # @param [String] key key as specified by Nexmo for authenticating.
   # @param [String] secret /Users/pupeno/Documents/texter/lib/texter.rb
   def initialize(key, secret)
-    super
+    super()
     self.key = key
     self.secret = secret
   end
