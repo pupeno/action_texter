@@ -1,4 +1,4 @@
-# Copyright © 2012, Watu
+# Copyright © 2012, 2013, Watu
 
 # A response as sent from the provider.
 #
