@@ -1,4 +1,6 @@
 # encoding: UTF-8
+# Copyright © 2013, Watu
+
 require File.expand_path('../lib/texter/version', __FILE__)
 
 Gem::Specification.new do |gem|

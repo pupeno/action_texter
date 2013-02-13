@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # Copyright © 2012, 2013, Watu
 
 # Parent class for all SMS clients.
