@@ -59,7 +59,7 @@ class ActionTexter::NexmoClient < ActionTexter::Client
   # Create a new Nexmo client with key and secret.
   #
   # @param [String] key key as specified by Nexmo for authenticating.
-  # @param [String] secret /Users/pupeno/Documents/texter/lib/texter.rb
+  # @param [String] secret secret as specified by Nexmo for authenticating.
   def initialize(key, secret)
     super()
     self.key = key
