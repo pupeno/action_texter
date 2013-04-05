@@ -4,7 +4,7 @@
 require "bigdecimal"
 
 # Responses sent by #TestClient
-class Texter::TestResponse < Texter::Response
+class ActionTexter::TestResponse < ActionTexter::Response
   attr_reader :parts_count, :parts, :cost, :remaining_balance, :reference, :error
 
   private
@@ -33,14 +33,14 @@ class Texter::TestResponse < Texter::Response
 end
 
 # A client that doesn't send any message but instead stores them on an array.
-class Texter::TestClient < Texter::Client
+class ActionTexter::TestClient < ActionTexter::Client
   def initialize
     @@deliveries = []
   end
 
   def deliver(message)
     @@deliveries << message
-    Texter::TestResponse.new(message)
+    ActionTexter::TestResponse.new(message)
   end
 
   # All the delivered messages so far.

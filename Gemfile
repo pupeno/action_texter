@@ -3,5 +3,5 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in texter.gemspec
+# Specify your gem's dependencies in action_texter.gemspec
 gemspec

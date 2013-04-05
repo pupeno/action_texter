@@ -13,7 +13,7 @@
 #   @return [String] actual message to send.
 # @!attribute reference
 #   @return [String] a reference that can be used later on to track responses. Implemented for: Nexmo.
-class Texter::Message
+class ActionTexter::Message
   attr_accessor :from, :to, :text, :reference
 
   def initialize(message = {})
@@ -24,9 +24,9 @@ class Texter::Message
   end
 
   def deliver(client = nil)
-    client ||= Texter::Client.default
+    client ||= ActionTexter::Client.default
     if client.nil?
-      raise "To deliver a message you need to specify a client by parameter to deliver or by Texter::Client.dafault="
+      raise "To deliver a message you need to specify a client by parameter to deliver or by ActionTexter::Client.dafault="
     end
     client.deliver(self)
   end
