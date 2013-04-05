@@ -4,7 +4,7 @@
 # Parent class for all SMS clients.
 #
 # @abstract
-class Texter::Client
+class ActionTexter::Client
   def self.default
     @default
   end
@@ -16,7 +16,7 @@ class Texter::Client
   def self.setup(provider, *attrs)
     provider_client =
         begin
-          Texter.const_get(provider + "Client")
+          ActionTexter.const_get(provider + "Client")
         rescue NameError
           raise "Provider #{provider} doesn't exist."
         end

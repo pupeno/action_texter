@@ -1,4 +1,4 @@
-# Texter
+# ActionTexter
 
 Generic interface to send SMSs with Ruby.
 
@@ -6,7 +6,7 @@ Generic interface to send SMSs with Ruby.
 
 Add this line to your application's Gemfile:
 
-    gem 'texter'
+    gem 'action_texter'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install texter
+    $ gem install action_texter
 
 ## Usage
 

@@ -10,7 +10,7 @@
 #   @return [Boolean] weather sending the message succeeded or not. See #success? and #failed?
 # @!attribute error_message
 #   @return [String] a descriptive message of the error when an error happened.
-class Texter::Response
+class ActionTexter::Response
   attr_reader :raw, :success, :error_message
 
   def initialize(raw)

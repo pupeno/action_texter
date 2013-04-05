@@ -8,7 +8,7 @@ require "json"
 require "uri"
 
 # Nexmo response
-class Texter::NexmoResponse < Texter::Response
+class ActionTexter::NexmoResponse < ActionTexter::Response
   SUCCESS_RESPONSE_CODE = "0"
 
   # TODO: Some of these should be moved to Response if they are common enough.
@@ -53,7 +53,7 @@ class Texter::NexmoResponse < Texter::Response
 end
 
 # Implementation of client for Nexmo: http://nexmo.com
-class Texter::NexmoClient < Texter::Client
+class ActionTexter::NexmoClient < ActionTexter::Client
   attr_accessor :key, :secret
 
   # Create a new Nexmo client with key and secret.
@@ -79,7 +79,7 @@ class Texter::NexmoClient < Texter::Client
                             "client-ref" => message.reference),
         {"Content-Type" => "application/x-www-form-urlencoded"})
 
-    return Texter::NexmoResponse.new(response.body)
+    return ActionTexter::NexmoResponse.new(response.body)
   end
 
   # @private
