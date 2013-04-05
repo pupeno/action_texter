@@ -8,8 +8,10 @@
 #   @return [String] the raw response as returned by the provider
 # @!attribute success
 #   @return [Boolean] weather sending the message succeeded or not. See #success? and #failed?
+# @!attribute error_message
+#   @return [String] a descriptive message of the error when an error happened.
 class Texter::Response
-  attr_reader :raw, :success
+  attr_reader :raw, :success, :error_message
 
   def initialize(raw)
     @raw = raw
@@ -28,7 +30,7 @@ class Texter::Response
 
   # @private
   def to_s
-    "#<#{self.class.name}:#{object_id}:#{@success ? "success" : "fail"}:>"
+    "#<#{self.class.name}:#{object_id}:#{@success ? "success" : "fail"}>"
   end
 
   private

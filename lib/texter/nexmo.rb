@@ -12,7 +12,7 @@ class Texter::NexmoResponse < Texter::Response
   SUCCESS_RESPONSE_CODE = "0"
 
   # TODO: Some of these should be moved to Response if they are common enough.
-  attr_reader :original, :parts_count, :parts, :cost, :remaining_balance, :reference, :error
+  attr_reader :original, :parts_count, :parts, :cost, :remaining_balance, :reference
 
   private
 
@@ -24,6 +24,7 @@ class Texter::NexmoResponse < Texter::Response
     @reference = @original["messages"].first["client-ref"] # They should all be the same, we only record it the first time.
     @remaining_balance = @original["messages"].last["remaining-balance"] # I hope the last one is the lowest one, the cost of a single message shouldn't make that big of a difference anyway.
     @parts = []
+    error_messages = []
     @original["messages"].each do |raw_part|
       if @success # Update the contents of success to status of this part unless @succes is already failed.
         @success = raw_part["status"] == SUCCESS_RESPONSE_CODE
@@ -40,14 +41,13 @@ class Texter::NexmoResponse < Texter::Response
         part[:remaining_balance] = BigDecimal.new(raw_part["remaining-balance"])
       end
       if raw_part.has_key? "error-text"
-        part[:error] = raw_part["error-text"]
-        @error ||= []
-        @error << part[:error]
+        part[:error_message] = raw_part["error-text"]
+        error_messages << part[:error_message]
       end
       @parts << part
     end
-    if !@error.nil?
-      @error = @error.uniq.join(", ")
+    if error_messages.any?
+      @error_message = error_messages.uniq.join(", ")
     end
   end
 end
