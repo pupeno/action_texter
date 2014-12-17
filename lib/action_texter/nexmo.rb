@@ -69,12 +69,19 @@ class ActionTexter::NexmoClient < ActionTexter::Client
   def deliver(message)
     client = Net::HTTP.new("rest.nexmo.com", 443)
     client.use_ssl = true
+
+    # Nexmo doesn't like phone numbers starting with a +
+    # Pattern only matches phones that are pristine phone numbers starting with a +, and leaves everything else alone
+    pattern = /^\+(\d+)$/
+    from = (message.from =~ pattern ? message.from.gsub(pattern, '\1')  : message.from )
+    to = (message.to =~ pattern ? message.to.gsub(pattern, '\1')  : message.to )
+
     response = client.post(
         "/sms/json",
         URI.encode_www_form("username" => @key,
                             "password" => @secret,
-                            "from" => message.from,
-                            "to" => message.to,
+                            "from" => from,
+                            "to" => to,
                             "text" => message.text,
                             "client-ref" => message.reference),
         {"Content-Type" => "application/x-www-form-urlencoded"})
