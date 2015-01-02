@@ -24,11 +24,17 @@ class ActionTexter::Message
   end
 
   def deliver(client = nil)
+    message = ActionTexter.inform_interceptors(self)
+    return nil if message.blank? # Do not send if one of the interceptors cancelled
+
     client ||= ActionTexter::Client.default
     if client.nil?
       raise "To deliver a message you need to specify a client by parameter to deliver or by ActionTexter::Client.dafault="
     end
-    client.deliver(self)
+
+    response = client.deliver(message)
+    ActionTexter.inform_observers(message, response)
+    response
   end
 
   # @private
