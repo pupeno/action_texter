@@ -8,4 +8,5 @@ require "action_texter/response"
 require "action_texter/response"
 require "action_texter/test"
 require "action_texter/nexmo"
+require "action_texter/twilio"
 
