@@ -1,5 +1,5 @@
 # encoding: UTF-8
-# Copyright © 2012, 2013, Watu
+# Copyright © 2012, 2013, 2014, 2015, Watu
 
 require "bigdecimal"
 require "net/http"

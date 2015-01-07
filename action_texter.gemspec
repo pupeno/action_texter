@@ -1,5 +1,5 @@
 # encoding: UTF-8
-# Copyright © 2013, Watu
+# Copyright © 2013, 2014, 2015, Watu
 
 require File.expand_path('../lib/action_texter/version', __FILE__)
 
