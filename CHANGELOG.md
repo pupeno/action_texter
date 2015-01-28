@@ -1,6 +1,6 @@
 Authoritative changelog in README.md.
 
-## Version next
+## Version 0.2.0 (Jan 28, 2015)
 - Interceptors and observers
 - Support for Twilio
 - Fixed Nexmo number formatting
