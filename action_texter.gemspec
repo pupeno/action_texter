@@ -4,7 +4,7 @@
 require File.expand_path('../lib/action_texter/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["J. Pablo Fernández"]
+  gem.authors       = ["J. Pablo Fernández", "Daniel Magliola"]
   gem.email         = ["info@carouselapps.com"]
   gem.description   = %q{Generic interface to send SMS with Ruby}
   gem.summary       = %q{Generic interface to send SMS with Ruby}
