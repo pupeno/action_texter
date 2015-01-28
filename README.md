@@ -68,6 +68,18 @@ ActionTexter.register_interceptor(MyInterceptor.new)
 ActionTexter.register_observer(MyObserver.new)
 ```
 
+## Changelog
+
+### Version next
+- Interceptors and observers
+- Support for Twilio
+- Fixed Nexmo number formatting
+
+### Version 0.1.0 (Apr 5, 2013)
+- Initial version
+- Support for Nexmo
+- Support for testing
+
 ## Contributing
 
 1. Fork it
