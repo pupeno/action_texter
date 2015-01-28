@@ -1,18 +1,24 @@
 # encoding: UTF-8
 # Copyright © 2013, 2014, 2015, Carousel Apps
 
-require File.expand_path('../lib/action_texter/version', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "action_texter/version"
 
-Gem::Specification.new do |gem|
-  gem.authors       = ["J. Pablo Fernández", "Daniel Magliola"]
-  gem.email         = ["info@carouselapps.com"]
-  gem.description   = %q{Generic interface to send SMS with Ruby}
-  gem.summary       = %q{Generic interface to send SMS with Ruby}
-  gem.homepage      = "http://carouselapps.com/action_texter"
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "action_texter"
-  gem.require_paths = ["lib"]
-  gem.version       = ActionTexter::VERSION
+Gem::Specification.new do |spec|
+  spec.name          = "action_texter"
+  spec.version       = ActionTexter::VERSION
+  spec.authors       = ["J. Pablo Fernández", "Daniel Magliola"]
+  spec.email         = ["info@carouselapps.com"]
+  spec.homepage      = "http://carouselapps.com/action_texter"
+  spec.description   = %q{Generic interface to send SMS with Ruby}
+  spec.summary       = %q{Generic interface to send SMS with Ruby}
+  spec.license       = "MIT"
+
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
+
+  spec.required_ruby_version = ">= 1.9.3"
 end
