@@ -6,7 +6,7 @@ Generic interface to send SMSs with Ruby.
 
 Add this line to your application's Gemfile:
 
-    gem 'action_texter'
+    gem "action_texter"
 
 And then execute:
 
@@ -34,9 +34,9 @@ end
 
 ```
 message = ActionTexter::Message.new(from: "phone number",
-                          to: "phone number",
-                          text: "message contents",
-                          reference: "optional reference")
+                                    to: "phone number",
+                                    text: "message contents",
+                                    reference: "optional reference")
 ```
 
 1. Deliver the message
