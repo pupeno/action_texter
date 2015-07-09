@@ -83,6 +83,7 @@ class ActionTexter::NexmoClient < ActionTexter::Client
                             "from" => from,
                             "to" => to,
                             "text" => message.text,
+                            "type" => (message.text.ascii_only? ? "text" : "unicode"),
                             "client-ref" => message.reference),
         {"Content-Type" => "application/x-www-form-urlencoded"})
 
