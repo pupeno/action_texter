@@ -1,9 +1,9 @@
 # ActionTexter
 
-[![Code Climate](https://codeclimate.com/github/watu/action_texter.png)](https://codeclimate.com/github/watu/action_texter)
-[![Inline docs](http://inch-ci.org/github/watu/action_texter.png)](http://inch-ci.org/github/watu/action_texter)
+[![Code Climate](https://codeclimate.com/github/carouselapps/action_texter.png)](https://codeclimate.com/github/carouselapps/action_texter)
+[![Inline docs](http://inch-ci.org/github/carouselapps/action_texter.svg?branch=master)](http://inch-ci.org/github/carouselapps/action_texter)
 [![Gem Version](https://badge.fury.io/rb/action_texter.png)](http://badge.fury.io/rb/action_texter)
-[![Dependency Status](https://gemnasium.com/watu/action_texter.svg)](https://gemnasium.com/watu/action_texter)
+[![Dependency Status](https://gemnasium.com/carouselapps/action_texter.svg)](https://gemnasium.com/carouselapps/action_texter)
 
 Generic interface to send SMSs with Ruby.
 
